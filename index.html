@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kittamet Pongtan - แนะนำตัว (Water Drop Effect)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.4);
+  box-shadow: 0 0 25px rgba(135, 206, 250, 0.7),
+              inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+    
+    body {
+      font-family: "Prompt", sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: #0f172a;
+      position: relative;
+    }
+
+    .bubbles-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(135, 206, 250, 0.4);
+      box-shadow: 0 0 15px rgba(135, 206, 250, 0.8), inset 0 0 8px rgba(255, 255, 255, 0.5);
+      animation: bubbleUp 15s infinite ease-in-out alternate;
+      mix-blend-mode: screen;
+      filter: blur(2px);
+    }
+
+    .bubble:nth-child(1) { width: 60px; height: 60px; left: 10%; top: 70%; animation-duration: 18s; animation-delay: 0s; }
+    .bubble:nth-child(2) { width: 90px; height: 90px; left: 50%; top: 90%; animation-duration: 15s; animation-delay: 2s; background: rgba(255, 105, 180, 0.4); box-shadow: 0 0 20px rgba(255, 105, 180, 0.8), inset 0 0 8px rgba(255, 255, 255, 0.5); }
+    .bubble:nth-child(3) { width: 45px; height: 45px; left: 80%; top: 50%; animation-duration: 22s; animation-delay: 4s; }
+    .bubble:nth-child(4) { width: 120px; height: 120px; left: 20%; top: 20%; animation-duration: 25s; animation-delay: 6s; background: rgba(173, 216, 230, 0.4); box-shadow: 0 0 10px rgba(173, 216, 230, 0.8), inset 0 0 8px rgba(255, 255, 255, 0.5); }
+    .bubble:nth-child(5) { width: 75px; height: 75px; left: 65%; top: 30%; animation-duration: 16s; animation-delay: 8s; }
+    .bubble:nth-child(6) { width: 30px; height: 30px; left: 5%; top: 40%; animation-duration: 10s; animation-delay: 1s; }
+    .bubble:nth-child(7) { width: 100px; height: 100px; left: 90%; top: 10%; animation-duration: 30s; animation-delay: 5s; background: rgba(255, 180, 105, 0.4); box-shadow: 0 0 25px rgba(255, 180, 105, 0.8), inset 0 0 8px rgba(255, 255, 255, 0.5); }
+    .bubble:nth-child(8) { width: 50px; height: 50px; left: 35%; top: 10%; animation-duration: 12s; animation-delay: 3s; }
+
+    @keyframes bubbleUp {
+      0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-100px) translateX(30px) scale(1.05); opacity: 0.8; }
+      100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 30px rgba(135, 206, 250, 0.5);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 2.6em;
+      margin-bottom: 10px;
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    h2 {
+      color: #b0c4de;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+
+    p {
+      line-height: 1.8;
+      color: #f0f0f0;
+      font-size: 1.05em;
+      margin-bottom: 30px;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social a {
+      color: #87cefa;
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .social a:hover {
+      color: #fff;
+      text-shadow: 0 0 15px #87cefa;
+    }
+
+    .social img {
+      width: 22px;
+      height: 22px;
+      margin-right: 8px;
+      vertical-align: middle;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="bubbles-container">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div class="container">
+    <div class="profile-pic">
+  <img src="C:\users\admin\OneDrive\เดสก์ท็อป\ความรู้เพิ่มเติม\i,m\Gemini_Generated_Image_sjs459sjs459sjs4.png" alt="My Photo">
+</div>
+    <h1>portfolio</h1>
+    <h2>นักศึกษาปีที่ 2 / นักพัฒนาเว็บ / ผู้ที่รักเทคโนโลยี </h2>
+    <p>
+      ผมชื่อ <strong>กฤตเมธ ป้องตัน ชื่อเล่นชื่อ กี้ </strong><br>
+      อายุ 20 ปี ผมชอบการเขียนโปรแกรมระดับหนี่ง ออกแบบเว็บไซต์ และเรียนรู้เทคโนโลยีใหม่ๆ<br>
+      เวลาว่างผมมักจะอ่านหนังสือ ดูหนัง เล่นเกมบ้าง หรือสร้างโปรเจ็กต์เล็กๆ เพื่อพัฒนาทักษะของตัวเองครับ
+      <br><strong>=ช่องทางการติดต่อผมด้านล่างนี้เลยครับ=</strong><br>หรืออยากดูผลงานด้านการทำโปรแกรมตามมาที่ <strong>GitHub</strong></p>
+    </p>
+    </p>
+
+    <div class="social">
+      <a href="https://www.facebook.com/KittametProtact" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">Facebook
+      </a>
+      <a href="https://www.instagram.com/Kittamet_66" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram
+      </a>
+      <a href="https://github.com/KITTAMETPONGTAN" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">GitHub
+      </a>
+    </div>
+  </div>
+</body>
+</html>
